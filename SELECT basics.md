@@ -1,4 +1,5 @@
 # 0 SELECT basics
+
 1. 
 ```sql
 SELECT population

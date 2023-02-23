@@ -1,4 +1,5 @@
 # 2 SELECT from World
+
 1. Observe the result of running this SQL command to show the name, continent and population of all countries.
 ```sql
 SELECT
@@ -51,16 +52,16 @@ FROM world
 WHERE name LIKE '%United%';
 ```
 
-7. Two ways to be big: A country is **big** if it has an area of more than 3 million sq km or it has a population of more than 250 million.
-
-Show the countries that are big by area or big by population. Show name, population and area.
+7. Two ways to be big: A country is **big** if it has an area of more than 3 million sq km or it has a population of more than 250 million. Show the countries that are big by area or big by population. Show name, population and area.
 ```sql
 SELECT
     name,
     population,
     area
 FROM world
-WHERE area > 3000000 OR population >= 250000000;
+WHERE
+    area > 3000000
+    OR population >= 250000000;
 ```
 
 8. Show the countries that are big by area (more than 3 million) or big by population (more than 250 million) **but not both**. Show name, population and area.
@@ -70,7 +71,9 @@ SELECT
     population,
     area
 FROM world
-WHERE (area > 3000000 AND population < 250000000) OR (population >= 250000000 AND area <= 3000000);
+WHERE
+    (area > 3000000 AND population < 250000000)
+    OR (population >= 250000000 AND area <= 3000000);
 ```
 
 9. Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
@@ -107,14 +110,17 @@ SELECT
     name,
     capital
 FROM world
-WHERE LEFT(name, 1) = LEFT(capital, 1) AND name <> capital;
+WHERE
+    LEFT(name, 1) = LEFT(capital, 1)
+    AND name <> capital;
 ```
 
 13. Find the country that has all the vowels and no spaces in its name.
 ```sql
 SELECT name
 FROM world
-WHERE name LIKE '%a%'
+WHERE
+    name LIKE '%a%'
     AND name LIKE '%e%'
     AND name LIKE '%i%'
     AND name LIKE '%o%'
