@@ -1,5 +1,4 @@
 # 1 SELECT name
-
 1. Find the country that start with Y.
 ```sql
 SELECT name
