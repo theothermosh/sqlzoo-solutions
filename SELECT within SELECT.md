@@ -87,7 +87,7 @@ FROM world x
 WHERE area >= ALL(
     SELECT area
     FROM world y
-    WHERE y.continent=x.continent);
+    WHERE y.continent = x.continent);
 ```
 
 8. List each continent and the name of the country that comes first alphabetically.
